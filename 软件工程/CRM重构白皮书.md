@@ -68,12 +68,10 @@ __说明：__
 	* __原系统__从理论上只有Entrance和Model两层
 	* 业务逻辑在Entrance中处理
 	* 不同的Entrance存在着相似的业务逻辑（比如工单和商机），这也就产生了相似的代码写两遍的问题
-	* 综上所述，本次系统增加了中间层次。目的在于对日益复杂的业务逻辑进行封装，将原来的低内聚变成高内聚
+	* 综上所述，本次系统增加了中间层次。目的在于对日益复杂的业务逻辑进行封装，将原来分散的业务逻辑通过Entity整合集合在一起
 * __根据业务复杂程度选择合适的路径实现业务逻辑__
 	*  __Entrance -> Model__ 对于非常简单的业务，可以直接在入口处搞定
-	*  __Entrance -> Service -> Model__ 稍微复杂的业务，可以提供一个service函数实现，一个service函数可以被多个函数调用
-	*  __Entrance -> Entity -> Model__ 当service函数的业务逻辑达到一屏的时候或者出现像商机，工单这类相似的业务的时候。需要动用OO的设计思路，来降低系统的耦合度
-	*  __Entrance -> Service -> Entity -> Model__ 这条路径是应对非常复杂的业务的，目前来看不建议使用
+	*  __Entrance -> Entity -> Model__ 出现复杂的业务逻辑后，需要将分散在各个Entrance的业务逻辑重构到到Entity对象中
 
 * __Entity Coding Specification__
 
