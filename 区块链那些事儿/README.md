@@ -17,7 +17,7 @@ __区块链从本质上来说就是一本大账本。与传统账本不同的是
 
 由于区块链的整个技术体系来自于bitcoin（一款电子加密货币），所以很多人的思路会被限制在货币这个视角内  
 
-![解放思想](../pic/p4.jpeg)
+![解放思想](http://7xovlo.com1.z0.glb.clouddn.com/p4.jpeg)
 
 但是，作为接受党多年教育的我们，怎么能满足于此囊  
 
@@ -73,7 +73,7 @@ __都是套路啊！！！！！！__
 如果你久经商场，已经手握资本，也许区块链会成为你投资的方向  
 关注公众号，或者直接加入[ebookchain社区](http://ebookchain.org/)让我们一起走进区块链的世界
 
- <img src="../pic/p0.jpg"  alt="公众号" align="center" />   
+ <img src="http://7xovlo.com1.z0.glb.clouddn.com/p0.jpg"  alt="公众号" align="center" />   
 
 
 
