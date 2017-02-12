@@ -1,0 +1,16 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generateEbookAccout.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bytebuffer": "^5.0.1",
+    "ed25519": "0.0.4",
+    "json-sql": "https://github.com/Ebookcoin/json-sql/tarball/master"
+  }
+}

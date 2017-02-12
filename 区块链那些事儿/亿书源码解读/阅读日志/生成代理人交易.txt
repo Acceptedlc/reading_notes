@@ -1,0 +1,33 @@
+生成代理人交易
+	生成：
+		senderPublicKey ✓
+		signature
+			研究一下签名是怎么生成的：
+				公私钥 + getHash(trs)
+				getHash(trs) = sha256(getBytes(trs))
+			签名的时候需要哪些key
+				asset
+				type
+				timestamp
+				senderPublicKey
+				amount
+				
+		id
+
+
+getBytes
+	调用相关交易的getBytes方法-》得到assetBytes
+	创建一个长度为1 + 4 + 32 + 32 + 8 + 8 + 64 + 64 + assetSize的ByteBuffer
+	trs.type(byte) -> ByteBuffer
+	trs.timestamp(int) -> ByteBuffer
+	trs.senderPublicKey -> buffer -> ByteBuffer
+	如果交易有requesterPublicKey
+		trs.requesterPublicKey -> buffer -> ByteBuffer
+	如果交易有recipientId
+		trs.recipientId -> bignum -> 前8个字节 -> ByteBuffer
+		否则 写入 8个0(Byte) -> ByteBuffer
+	trs.amount(long) -> ByteBuffer
+	如果assetSize > 0
+		assetBytes -> ByteBuffer
+	需要写入签名的时候写入签名
+	需要写入二次签名的时候写入二次签名
