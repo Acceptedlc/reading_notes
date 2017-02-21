@@ -50,3 +50,40 @@ function getRegisteredUsers ({ fields = [], include = [], fromDate = '2017-12-1'
  }  
 
 ``` 
+
+##### 减少函数的副作用
+
+```
+
+// DON'T
+function addItemToCart (cart, item, quantity = 1) {  
+  const alreadyInCart = cart.get(item.id) || 0
+  cart.set(item.id, alreadyInCart + quantity)
+  return cart
+}
+
+// DO
+// not modifying the original cart
+function addItemToCart (cart, item, quantity = 1) {  
+  const cartCopy = new Map(cart)
+  const alreadyInCart = cartCopy.get(item.id) || 0
+  cartCopy.set(item.id, alreadyInCart + quantity)
+  return cartCopy
+}
+
+// or by invert the method location
+// you can expect that the original object will be mutated
+// addItemToCart(cart, item, quantity) -> cart.addItem(item, quantity)
+const cart = new Map()  
+Object.assign(cart, {  
+  addItem (item, quantity = 1) {
+    const alreadyInCart = this.get(item.id) || 0
+    this.set(item.id, alreadyInCart + quantity)
+    return this
+  }
+})
+
+```
+
+
+##### 让函数在文件中排列的顺序合理一些，需要先读的放在前面
