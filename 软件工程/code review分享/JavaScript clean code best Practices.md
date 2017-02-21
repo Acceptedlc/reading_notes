@@ -42,15 +42,11 @@ function inviteUser (emailAddress) { /* implementation */ }
 
 // DON'T
 function getRegisteredUsers (fields, include, fromDate, toDate) { /* implementation */ }  
-getRegisteredUsers(['firstName', 'lastName', 'email'], ['invitedUsers'], '2016-09-26', '2016-12-13')
+
 
 // DO
-function getRegisteredUsers ({ fields = [], include = [], fromDate = '2017-12-1', toDate = '2017-12-1' }) { /* implementation */ }  
-getRegisteredUsers({  
-  fields: ['firstName', 'lastName', 'email'],
-  include: ['invitedUsers'],
-  fromDate: '2016-09-26',
-  toDate: '2016-12-13'
-})
+function getRegisteredUsers ({ fields = [], include = [], fromDate = '2017-12-1', toDate = '2017-12-1' }) {
+ 	/* implementation */ 
+ }  
 
 ``` 
